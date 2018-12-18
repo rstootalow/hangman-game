@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER STYLES */
+
+/* header {
+    background-image: url("../images/90s-theme-bg.jpg");
+    background-size: contain;
+    width: 100%;
+    height: auto;
+} */
+
+img {
+    width: 100%;
+}
+
+
+ #bootstrap-override h1 {
+    font-family: Orbitron;
+    text-align: center;
+    /* margin-right: 13.5%; */
+    padding-top: 1%;
+    background: black;
+}
+
+
+
+
