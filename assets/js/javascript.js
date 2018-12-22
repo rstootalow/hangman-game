@@ -1,15 +1,32 @@
-/* PSEUDOCODE */
+/* GLOBAL VARIABLES TO BE USED THROUGHOUT THE GAME */
 
-/* 
-1) User presses any key to start the game (code document key up so any key will start the game.)
-2) Randomly choose a word for the user to guess
-3) if user correctly guesses letter:
-    - that letter should display in in a text box.
-    - 
+// CREATE A WORD BANK (ARRAY) THE USER WILL BE GUESSING FROM
+
+var gameWords = [
+    "Nirvana",
+    "Radiohead",
+    "2pac",
+    "Wu-tang",
+    "Soundgarden",
+    "Weezer",
+    "Tool",
+    "Beck",
+    "Outkast",
+    "Pantera"
+];
+
+// PICK A RANDOM WORD FROM THE ARRAY AS THE WORD TO GUESS
+var wordToGuess = gameWord[Math.floor(Math.random() * gameWord.length)];
+
+// CREATE ARRAY TO SHOW HOW MANY LETTERS ARE IN THE WORD BEING GUESSED
+var userGuess = [];
+
+// FOR LOOP TO ITERATE THROUGH RANDOMLY CHOSEN WORD AND POPULATE THAT FIELD WITH UNDERSCORES
+for(var i = 0; i < wordToGuess.length; i++) {
+    userGuess[i] = "_";
+}
 
 
-*/
 
-/* START OF GAME */
 
-// alert("Press Any Key to Get Started!");
+
