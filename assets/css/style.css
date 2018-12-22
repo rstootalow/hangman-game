@@ -4,16 +4,16 @@ body {
 }
 
 /* HEADER STYLES */
+header h1 {
+    color: white;
+    padding: 4px;
+}
 
-/* header {
-    background-image: url("../images/90s-theme-bg.jpg");
-    background-size: contain;
-    width: 100%;
-    height: auto;
-} */
+
 
 img {
     width: 100%;
+    height: auto;
 }
 
 
@@ -25,6 +25,9 @@ img {
     background: black;
 }
 
+#bootstrap-override .row {
+    text-align: center;
+}
 
 
 
