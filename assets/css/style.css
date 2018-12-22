@@ -4,20 +4,16 @@ body {
 }
 
 /* HEADER STYLES */
-header h1 {
+header h1, h2 {
     color: white;
-    padding: 4px;
+    /* padding: 4px; */
 }
 
 
 
-img {
-    width: 100%;
-    height: auto;
-}
 
 
- #bootstrap-override h1 {
+ #bootstrap-override .bands, .game-start {
     font-family: Orbitron;
     text-align: center;
     /* margin-right: 13.5%; */

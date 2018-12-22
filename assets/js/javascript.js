@@ -1,4 +1,15 @@
+
+
+
+
 /* GLOBAL VARIABLES TO BE USED THROUGHOUT THE GAME */
+
+var wins = 0; //place to store number of times a player wins. 
+var losses = 0; // place to store number of times player looses
+var incorrectGuess = [];
+var guessesLeft = 15;
+var underscores = [];
+var playerGuess = [];
 
 // CREATE A WORD BANK (ARRAY) THE USER WILL BE GUESSING FROM
 
@@ -15,16 +26,18 @@ var gameWords = [
     "Pantera"
 ];
 
-// PICK A RANDOM WORD FROM THE ARRAY AS THE WORD TO GUESS
-var wordToGuess = gameWord[Math.floor(Math.random() * gameWord.length)];
 
-// CREATE ARRAY TO SHOW HOW MANY LETTERS ARE IN THE WORD BEING GUESSED
-var userGuess = [];
 
-// FOR LOOP TO ITERATE THROUGH RANDOMLY CHOSEN WORD AND POPULATE THAT FIELD WITH UNDERSCORES
-for(var i = 0; i < wordToGuess.length; i++) {
-    userGuess[i] = "_";
+// KEY PRESS FUNCTION
+
+document.onkeyup = function() {
+    var userGuess = event.key;
+
+
 }
+
+
+
 
 
 
