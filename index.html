@@ -12,21 +12,25 @@
 </head>
 <body id="bootstrap-override" >
     <header>
-        <img class="ninetys-image" src="../word-guessing-game/assets/images/90s-party.jpg" alt="">
-        <h1>Can You Guess The Word?</h1>
+        <!-- <img class="ninetys-image" src="../word-guessing-game/assets/images/90s-party.jpg" alt=""> -->
+        <h1>Can You Guess The 90's Band?</h1>
     </header>
     <section class="container">
         <div class="row">
-            <div class="col-md">
-                <h2>Scoreboard:</h2>
-                <div class="wins">Wins:</div>
-                <div class="losses">Losses:</div>
-            </div>
-            <div class="col-md">
+            <div class="col-lg-12">
                 <h2>Game Board:</h2>
-                <h3>Word To Guess:</h3>
-                <div class="guesses">Guesses Left:</div>
-                <div class="numOfGuesses">Your Guesses so far:</div>
+                <h3 id="wordToGuess">Word To Guess:</h3>
+                <h3 id="incorrectGuesses">Incorrect Guesses:</h3>
+                <div id="guesses">Guesses Left:</div>
+                <div id="numOfGuesses">Your Guesses so far:</div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Scoreboard:</h2>
+                <div id="wins">Wins:</div>
+                <div id="losses">Losses:</div>
             </div>
         </div>
     </section>
