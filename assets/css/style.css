@@ -9,16 +9,16 @@ header h1, h2 {
     /* padding: 4px; */
 }
 
-
-
-
-
- #bootstrap-override .bands, .game-start {
+ #bootstrap-override .bands, .game-start, .any-key {
     font-family: Orbitron;
     text-align: center;
     /* margin-right: 13.5%; */
     padding-top: 1%;
     background: black;
+}
+
+#bootstrap-override, span {
+    
 }
 
 #bootstrap-override .row {
