@@ -62,34 +62,37 @@ function checkLetter() {
                         numOfGuessesLeft--;
                         document.getElementById("guesses-left").innerHTML = "Guesses Left: " + numOfGuessesLeft;
                     }
-
                 }
 }
 
 /* FUNCTION TO CHECK IF USER GUESSED CORRECT WORD */
-function checkIfWin() {
+function checkIfWon() {
     // check if all letters in selected word have been guessed
-    if(correctGuess === guessesToCorrect) {
+    if (correctGuess === guessesToCorrect) {
         wins++;
         document.getElementById("wins").innerHTML = "Wins: " + wins;
-        alert("Congrats! You've won the game!");
-        // code a reset function to restart the game after win
-    } else if(numOfGuessesLeft === 0) {
-
-    }
-    
+         alert("Congrats! You've won the game!");
+    // code a reset function to restart the game after win
+} else if (numOfGuessesLeft === 0) {
+    losses++;
+    document.getElementById("losses").innerHTML = "Losses: " + losses;
+    alert("You lost! Please try again!");
 }
+        
+}
+
+
     
         /* Game End and Reset Code Goes Here */
 
-
+        
             
 
 
 // CALL FUNCTIONS
 gameStart();
 checkLetter();
-checkIfWin();
+checkIfWon();
 
 
 
