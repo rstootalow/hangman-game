@@ -1,11 +1,10 @@
 
 
 // WORD BANK OF WORDS TO RANOMLY CHOOSE FROM
-gameWords = ["tool", "metallica", "megadeth", "nirvana", "biggie", "snoop doggy dog", "live"];
+gameWords = ["tool", "metallica", "megadeth", "nirvana", "biggie", "snoop", "live"];
 
 var selectedWord; // holds the selected word from the word bank array
 var lettersInWord = [];
-var guessesToCorrect = 0; // number of correct guesses NEEDED to complete the selected word.
 var wrongGuess = []; // array to hold the incorrect LETTER guesses from the player
 var correctGuess = 0; // store correct guesses to compare to letter in words when determining wins or losses. 
 var wins = 0; // counter for number of WORDS guessed correctly
@@ -21,14 +20,14 @@ selectedWord = gameWords[Math.floor(Math.random() * gameWords.length)].toString(
 lettersInWord = selectedWord.split("");
 console.log(lettersInWord); // TEST
 
+// guessesToCorrect = lettersInWord.length;
+
 // START OF THE GAME
 function gameStart() {
     // populate selected word with "_" based on length of selected word
-    for(var i = 0; i < selectedWord.length; i++) {
+    for(var i = 0; i < lettersInWord.length; i++) {
             underscoresAndGuesses[i] = " _ "; //adds underscore to the bandToGuess field to indicate how many letters are in the word.
-    
     }
-    guessesToCorrect = lettersInWord.length;
     /* DEFAULT HTML ELEMENTS TO POPULATE AT START OF GAME */
     document.getElementById("bandToGuess").innerHTML = "Band To Guess:  " + "<br>" + underscoresAndGuesses.join(' ');
     document.getElementById("incorrect-guesses").innerHTML = "Incorrect Guesses: " + "<br>" + wrongGuess.join(' ');
@@ -42,7 +41,7 @@ function checkLetter() {
         userGuess = event.key // key press value is added to userGuess variable
         var letterFound = false;
         for (var i = 0; i < lettersInWord.length; i++) {
-                    if(lettersInWord[i] === userGuess) {
+                    if (lettersInWord[i] === userGuess) {
                         underscoresAndGuesses[i] = userGuess;
                         correctGuess++;
                         console.log(correctGuess); // TEST
@@ -50,9 +49,11 @@ function checkLetter() {
                         letterFound = true;
                         numOfGuessesLeft--;
                         document.getElementById("guesses-left").innerHTML = "Guesses Left: " + numOfGuessesLeft;
-                    } 
+                    }
+                    winLoss(); // THIS WORKS....KIND OF
                 }
-             if (letterFound) return;
+
+                 if (letterFound) return;
                 
                 // if the letter is not one of the letters in selected word
                 if (wrongGuess.indexOf(userGuess < 0)) { // if value is -1 it is not there, meaning we can push that letter to the incorrectGuesses
@@ -62,29 +63,45 @@ function checkLetter() {
                         numOfGuessesLeft--;
                         document.getElementById("guesses-left").innerHTML = "Guesses Left: " + numOfGuessesLeft;
                     }
+                    winLoss();
                 }
+                
 }
 
 /* FUNCTION TO CHECK IF USER GUESSED CORRECT WORD */
-function checkIfWon() {
+function winLoss() {
     // check if all letters in selected word have been guessed
-    if (correctGuess === guessesToCorrect) {
+    if (correctGuess === lettersInWord.length) {
         wins++;
         document.getElementById("wins").innerHTML = "Wins: " + wins;
-         alert("Congrats! You've won the game!");
+        alert("Congrats! You've won the game!");
     // code a reset function to restart the game after win
-} else if (numOfGuessesLeft === 0) {
-    losses++;
-    document.getElementById("losses").innerHTML = "Losses: " + losses;
-    alert("You lost! Please try again!");
-}
+        // gameReset();
+    } else if (numOfGuessesLeft === 0) {
+        losses++;
+        document.getElementById("losses").innerHTML = "Losses: " + losses;
+        alert("You lost! Please try again!");
+        // gameReset();
+    }
         
 }
 
+/* RESET FUNCTION AFTER WIN / LOSS */
 
-    
-        /* Game End and Reset Code Goes Here */
+/*function gameReset() {
+    // RESET ANY VARIABLES TO THEIR NUMERICAL DEFAULTS
+    lettersInWord = [];
+    wrongGuess = [];
+    correctGuess = 0;
+    numOfGuessesLeft = 0;
 
+    // choose a random word from the word bank for the player to guess
+    selectedWord = gameWords[Math.floor(Math.random() * gameWords.length)].toString();
+    // get list of letters in selectedWord and add those letters to the lettersInWord arra
+    lettersInWord = selectedWord.split("");
+    gameStart();
+
+} */
         
             
 
@@ -92,7 +109,7 @@ function checkIfWon() {
 // CALL FUNCTIONS
 gameStart();
 checkLetter();
-checkIfWon();
+// winLoss();
 
 
 
