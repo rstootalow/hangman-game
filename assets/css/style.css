@@ -5,25 +5,78 @@ body {
 
 /* HEADER STYLES */
 header h1, h2 {
+    background-color: #da7f2b;
     color: white;
     /* padding: 4px; */
 }
 
- #bootstrap-override .bands, .game-start, .any-key {
-    font-family: Orbitron;
+.hangman {
+    margin-top: -8px;
     text-align: center;
-    /* margin-right: 13.5%; */
-    padding-top: 1%;
-    background: black;
 }
 
-#bootstrap-override, span {
-    
+
+
+ #bootstrap-override .characters, .game-start, .any-key {
+    font-family: Lato;
+    text-align: center;
+    /* margin-right: 13.5%; */
+    /* padding-top: 1%; */
+    background: #da7f2b;
 }
+
+#bootstrap-override header div {
+    margin-top: -8px;
+    color: white;
+    font-size: 20px;
+}
+
+#bootstrap-override .any-key {
+    color: black;
+    font-weight: bolder;
+    margin-bottom: 25px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+#scoreboard {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.guesses {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.score {
+    float: right;
+    display: inline-block;
+    margin-top: 20px;
+}
+
 
 #bootstrap-override .row {
     text-align: center;
 }
+
+img {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    padding: 5px;
+    box-shadow: 3px 3px 5px; #ccc;
+}
+
+#bootstrap-override img p {
+    padding-top: 10px;
+}
+
+.last-row {
+    margin-bottom: 30px;
+}
+
+
 
 
 
